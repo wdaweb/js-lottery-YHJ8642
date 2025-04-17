@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>威力採</title>
+</head>
+
+<body>
+
+    <script>
+        function radomNumbers(count, min, max) {
+            let numbers = [];
+            while (numbers.length < count) {
+                let rand = Math.round(Math.random() * (max - min)) + min;
+                if (!numbers.includes(rand)) {
+                    numbers.push(rand);
+                }
+            }
+            return numbers;
+        }
+        let aArea = radomNumbers(6, 1, 38);
+        aArea.sort((a, b) => a - b);
+        let bArea = radomNumbers(1, 1, 8);
+        document.write("A 區號碼: " + aArea.join(", ") + "<br>");
+        document.write("B 區號碼: " + bArea[0]);
+    </script>
+
+</body>
+
+</html>
